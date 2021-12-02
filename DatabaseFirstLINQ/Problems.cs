@@ -15,7 +15,7 @@ namespace DatabaseFirstLINQ
         }
         public void RunLINQQueries()
         {
-            //ProblemOne();
+            ProblemOne();
             //ProblemTwo();
             //ProblemThree();
             //ProblemFour();
@@ -42,8 +42,21 @@ namespace DatabaseFirstLINQ
         {
             // Write a LINQ query that returns the number of users in the Users table.
             // HINT: .ToList().Count
-
+            var users = _context.Users;
+            var numOfUser = users.Count();
+            {
+                Console.Write(numOfUser);
+            }
         }
+
+        //{
+        //    var users = _context.UserRoles;
+        //var userRole = users.Include(u => u.Role).Include(ur => ur.User).Where(ur => ur.Role.RoleName == "Customer");
+        //    foreach(var user in userRole)
+        //    {
+        //        Console.Write(user.User.Email);
+        //    }
+        //}
 
         private void ProblemTwo()
         {
