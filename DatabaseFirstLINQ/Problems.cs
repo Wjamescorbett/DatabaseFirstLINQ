@@ -16,7 +16,7 @@ namespace DatabaseFirstLINQ
         public void RunLINQQueries()
         {
             ProblemOne();
-            //ProblemTwo();
+            ProblemTwo();
             //ProblemThree();
             //ProblemFour();
             //ProblemFive();
@@ -62,12 +62,10 @@ namespace DatabaseFirstLINQ
         {
             // Write a LINQ query that retrieves the users from the User tables then print each user's email to the console.
             var users = _context.Users;
-
-            foreach (User user in users)
+            foreach (var user in users)
             {
                 Console.WriteLine(user.Email);
             }
-
         }
 
         private void ProblemThree()
