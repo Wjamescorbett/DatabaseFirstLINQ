@@ -19,8 +19,8 @@ namespace DatabaseFirstLINQ
             //ProblemTwo();
             //ProblemThree();
             //ProblemFour();
-            ProblemFive();
-            //ProblemSix();
+            //ProblemFive();
+            ProblemSix();
             //ProblemSeven();
             //ProblemEight();
             //ProblemNine();
@@ -48,15 +48,6 @@ namespace DatabaseFirstLINQ
                 Console.Write(numOfUser);
             }
         }
-
-        //{
-        //    var users = _context.UserRoles;
-        //var userRole = users.Include(u => u.Role).Include(ur => ur.User).Where(ur => ur.Role.RoleName == "Customer");
-        //    foreach(var user in userRole)
-        //    {
-        //        Console.Write(user.User.Email);
-        //    }
-        //}
 
         private void ProblemTwo()
         {
@@ -106,14 +97,7 @@ namespace DatabaseFirstLINQ
                 {
                     Console.WriteLine(user.Email + " " + user.RegistrationDate);
                 }
-                
             }
-
-            
-
-            
-            
-
         }
 
         
@@ -122,6 +106,16 @@ namespace DatabaseFirstLINQ
         {
             // Write a LINQ query that gets all of the users who registered AFTER 2016 and BEFORE 2018
             // Then print each user's email and registration date to the console.
+            var users = _context.Users;
+            DateTime dt2 = new DateTime(2016, 01, 01);
+            DateTime dt3 = new DateTime(2018, 01, 01);
+            foreach (var user in users)
+            {
+                if (user.RegistrationDate < dt3 & user.RegistrationDate > dt2)
+                {
+                    Console.WriteLine(user.Email + " " + user.RegistrationDate);
+                }
+            }
 
         }
 
